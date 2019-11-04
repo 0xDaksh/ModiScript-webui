@@ -1,0 +1,21 @@
+.land {
+    min-height: 100vh;
+    background: url(https://cdn.dnaindia.com/sites/default/files/styles/full/public/2017/03/20/557987-adityanath-modi-shah-afp.jpg?itok=QrHCeVaD) no-repeat center, linear-gradient(to right, rgba(255, 0, 0, 0.5), rgba(0, 0, 255, 0.5));
+	background-blend-mode: overlay;
+	background-size: cover;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.boop {
+    text-align: center;
+    color: white;
+}
+
+.boop h2 {
+    font-size: 60px;
+}
+
+.boop p {
+    font-size: 30px;
+}

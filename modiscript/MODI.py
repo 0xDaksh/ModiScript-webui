@@ -7,11 +7,14 @@ from lexer import Lexer
 from parser import Parser
 from utils import ErrorHandler, FNF, usage
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import sys, io
 
 DEBUG = False
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="/static")
+
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 def compile_file(value, valueType="filename"):
     global DEBUG
@@ -28,6 +31,9 @@ def execute(ostdout, value, valueType="filename"):
     sys.stdout = ostdout
     return out
 
+@app.route('/', methods=["GET"])
+def index():
+    return app.send_static_file("index.html")
 
 @app.route('/', methods=["POST"])
 def run_modi_script():

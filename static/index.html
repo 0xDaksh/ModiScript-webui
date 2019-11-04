@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>
+      ModiScript - The Programming Language for India's Growing Population!
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="main.css" type="text/css" />
+  </head>
+
+  <body>
+    <section class="land">
+      <nav class="navbar navbar-dark">
+        <a class="navbar-brand" href="#" style="font-size: 30px;">
+          ModiScript (Namo Namo)
+        </a>
+      </nav>
+
+      <div style="min-height: 100px;"></div>
+      <div class="container boop" id="app">
+        <h2>ModiScript</h2>
+        <p>For the Next Billion Indians!</p>
+        <div class="container">
+          <form>
+            <div class="mb-3">
+              <label>Select a Program</label>
+              <select
+                required="required"
+                class="custom-select custom-select-lg mb-3"
+                v-model="choice"
+              >
+                <option v-for="option in options" :key="option.value"
+                :value="option.value">
+                  {{ option.name }}
+                </option>
+              </select>
+              <label for="textarea">Input</label>
+              <textarea
+                v-model="code"
+                placeholder="Enter Demo Text"
+                required="required"
+                class="form-control"
+                rows="5"
+              ></textarea>
+            </div>
+          </form>
+          <button type="button" class="btn btn-info btn-lg" @click="sendReq">Send</button>
+          <div>
+            {{ this.out }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
